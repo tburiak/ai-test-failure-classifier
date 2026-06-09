@@ -1,0 +1,10 @@
+FAIL tests/example.spec.ts
+
+Expected value to equal:
+  "ready"
+
+Received:
+  "pending"
+
+Error: expected "pending" to be "ready"
+    at tests/example.spec.ts:12:18
