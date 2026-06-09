@@ -26,7 +26,7 @@ export function buildMarkdownReport(parsedLog: ParsedLog, analysis: FailureAnaly
     : "- none";
 
   return [
-    "# Test Failure Analysis Report",
+    "# LLM-Assisted Test Failure Analysis Report",
     "",
     "## Summary",
     "",

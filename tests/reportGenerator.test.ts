@@ -38,7 +38,7 @@ describe("buildMarkdownReport", () => {
   it("builds Markdown content with summary, metadata, and analysis details", () => {
     const report = buildMarkdownReport(parsedLog, analysis);
 
-    expect(report).toContain("# Test Failure Analysis Report");
+    expect(report).toContain("# LLM-Assisted Test Failure Analysis Report");
     expect(report).toContain("| Field | Value |");
     expect(report).toContain("| Test name | Login form shows required email validation |");
     expect(report).toContain("| Framework | cypress |");

@@ -41,11 +41,15 @@ Markdown report output:
 npm run analyze -- examples/cypress-locator-failure.log --markdown output/report.md
 ```
 
+A stable sample Markdown report is available at `reports/sample-report.md` for quick review.
+
 Both report formats can be written in one run:
 
 ```sh
 npm run analyze -- examples/cypress-locator-failure.log --json output/result.json --markdown output/report.md
 ```
+
+Do not run the tool on logs containing secrets or sensitive data unless the logs are sanitized first. JSON reports include the raw log content for traceability.
 
 ## Development
 
