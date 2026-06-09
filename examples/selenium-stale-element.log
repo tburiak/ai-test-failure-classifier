@@ -1,0 +1,7 @@
+Selenium WebDriver
+Source: src/test/java/example/CheckoutTest.java
+Test: CheckoutTest.addsItemToCart
+
+org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  at example.CheckoutTest.addsItemToCart(CheckoutTest.java:47)
+  at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

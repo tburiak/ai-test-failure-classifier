@@ -1,0 +1,9 @@
+API Test Runner
+Source: tests/api/orders.spec.ts
+Test: Creates order through POST /orders
+
+AssertionError: expected response status 201 but received 500
+Request: POST /orders
+Response status: 500
+  at tests/api/orders.spec.ts:31:12
+  at async tests/api/orders.spec.ts:24:5

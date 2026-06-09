@@ -1,0 +1,6 @@
+CI setup
+Source: tests/setup/globalSetup.ts
+Test: Global setup starts test database
+
+Error: connect ECONNREFUSED 127.0.0.1:5432
+  at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)

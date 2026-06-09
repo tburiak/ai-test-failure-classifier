@@ -1,0 +1,7 @@
+@playwright/test
+Spec: tests/search.spec.ts
+Test: Search results load after submitting query
+
+TimeoutError: locator('[data-testid="result-card"]').first() timed out after 5000ms
+  at tests/search.spec.ts:22:42
+  at async tests/search.spec.ts:18:3
