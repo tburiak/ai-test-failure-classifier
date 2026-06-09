@@ -6,6 +6,8 @@ This repository is an engineering prototype and reference implementation. The cu
 
 ## Usage
 
+Console output:
+
 ```sh
 npm run analyze -- examples/cypress-locator-failure.log
 ```
@@ -27,6 +29,24 @@ Matched signals:
 Recommended action: Verify whether the locator changed or the UI no longer renders the expected element.
 ```
 
+JSON output:
+
+```sh
+npm run analyze -- examples/cypress-locator-failure.log --json output/result.json
+```
+
+Markdown report output:
+
+```sh
+npm run analyze -- examples/cypress-locator-failure.log --markdown output/report.md
+```
+
+Both report formats can be written in one run:
+
+```sh
+npm run analyze -- examples/cypress-locator-failure.log --json output/result.json --markdown output/report.md
+```
+
 ## Development
 
 ```sh
@@ -35,4 +55,4 @@ npm run build
 npm test
 ```
 
-OpenAI integration, real provider calls, report generation, web UI, Docker, and storage are intentionally out of scope for this initial bootstrap.
+OpenAI integration, real provider calls, HTML reports, web UI, Docker, storage, and databases are intentionally out of scope for this initial bootstrap.

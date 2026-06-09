@@ -9,9 +9,11 @@ export type {
 } from "./models.js";
 export { allowedFailureClassifications } from "./models.js";
 export { analyzeParsedLog } from "./analyzer.js";
+export { parseAnalyzeArgs } from "./cliArgs.js";
 export { formatFailureAnalysisSummary } from "./cliOutput.js";
 export { parseLogContent, parseLogFile } from "./logParser.js";
 export { buildAnalysisPrompt } from "./promptBuilder.js";
+export { buildJsonReport, buildMarkdownReport, writeTextFile } from "./reportGenerator.js";
 export type { LlmProvider } from "./providers/LlmProvider.js";
 export { MockLlmProvider } from "./providers/MockLlmProvider.js";
 
