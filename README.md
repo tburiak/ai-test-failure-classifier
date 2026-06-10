@@ -12,7 +12,7 @@ Console output:
 npm run analyze -- examples/cypress-locator-failure.log
 ```
 
-The command parses the provided log, runs the mock LLM analyzer, and prints a plain-text triage summary:
+The command parses the provided log, runs the default mock LLM analyzer, and prints a plain-text triage summary:
 
 ```text
 Failure analysis summary
@@ -49,6 +49,22 @@ Both report formats can be written in one run:
 npm run analyze -- examples/cypress-locator-failure.log --json output/result.json --markdown output/report.md
 ```
 
+Provider selection:
+
+```sh
+npm run analyze -- examples/cypress-locator-failure.log --provider mock
+```
+
+The mock provider is the default and does not make network calls. An optional OpenAI provider is available for manual experiments:
+
+```sh
+$env:OPENAI_API_KEY = "sk-..."
+$env:OPENAI_MODEL = "gpt-4o-mini"
+npm run analyze -- examples/cypress-locator-failure.log --provider openai --json output/openai-result.json --markdown output/openai-report.md
+```
+
+`OPENAI_MODEL` is optional and defaults to `gpt-4o-mini`. API keys must never be committed to the repository.
+
 Do not run the tool on logs containing secrets or sensitive data unless the logs are sanitized first. JSON reports include the raw log content for traceability.
 
 ## Development
@@ -59,4 +75,4 @@ npm run build
 npm test
 ```
 
-OpenAI integration, real provider calls, HTML reports, web UI, Docker, storage, and databases are intentionally out of scope for this initial bootstrap.
+LangChain, agents, streaming, retry logic, HTML reports, web UI, Docker, storage, and databases are intentionally out of scope for this initial bootstrap.

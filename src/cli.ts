@@ -1,11 +1,13 @@
 #!/usr/bin/env node
-import { analyzeLogFile, analyzeParsedLog, MockLlmProvider } from "./index.js";
+import { analyzeLogFile, analyzeParsedLog, createLlmProvider } from "./index.js";
 import { parseAnalyzeArgs } from "./cliArgs.js";
 import { formatFailureAnalysisSummary } from "./cliOutput.js";
 import { buildJsonReport, buildMarkdownReport, writeTextFile } from "./reportGenerator.js";
 
 function printUsage(): void {
-  console.error("Usage: npm run analyze -- <log-file-path> [--json <path>] [--markdown <path>]");
+  console.error(
+    "Usage: npm run analyze -- <log-file-path> [--provider mock|openai] [--json <path>] [--markdown <path>]"
+  );
 }
 
 const cliArgs = process.argv.slice(2);
@@ -18,7 +20,7 @@ if (!cliArgs[0]) {
     const options = parseAnalyzeArgs(cliArgs);
     const logFilePath = options.logFilePath;
     const parsedLog = await analyzeLogFile(logFilePath);
-    const analysis = await analyzeParsedLog(parsedLog, new MockLlmProvider());
+    const analysis = await analyzeParsedLog(parsedLog, createLlmProvider(options.provider));
 
     console.log(formatFailureAnalysisSummary(parsedLog, analysis));
 

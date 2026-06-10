@@ -16,6 +16,18 @@ export { buildAnalysisPrompt } from "./promptBuilder.js";
 export { buildJsonReport, buildMarkdownReport, writeTextFile } from "./reportGenerator.js";
 export type { LlmProvider } from "./providers/LlmProvider.js";
 export { MockLlmProvider } from "./providers/MockLlmProvider.js";
+export {
+  defaultOpenAiModel,
+  missingOpenAiApiKeyMessage,
+  OpenAiProvider
+} from "./providers/OpenAiProvider.js";
+export {
+  createLlmProvider,
+  isLlmProviderName,
+  llmProviderNames,
+  parseLlmProviderName
+} from "./providers/providerFactory.js";
+export type { LlmProviderName } from "./providers/providerFactory.js";
 
 export async function analyzeLogFile(logFilePath: string): Promise<ParsedLog> {
   return parseLogFile(logFilePath);
